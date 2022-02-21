@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+
+:root {
+	--v-red: hsl(7, 99%, 70%);
+	--v-yellow: hsl(51, 100%, 49%);
+	--v-dark-cyan: hsl(167, 40%, 24%);
+	--v-blue: hsl(198, 62%, 26%);
+	--v-cyan: hsl(168, 34%, 41%);
+
+	--v-d-blue: hsl(212, 27%, 19%);
+	--v-vg-blue: hsl(213, 9%, 39%);
+	--v-g-blue: hsl(232, 10%, 55%);
+	--v-gg-blue: hsl(210, 4%, 67%);
+	--v-white: hsl(0, 0%, 100%);
+
+	--v-light-blue: hsl(200, 100%, 62%);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	position: relative;
+	font-weight: inherit;
+}
+
+body {
+	min-height: 100vh;
+
+	background: var(--color-background);
+
+	font-size: 18px;
+	line-height: 1.6;
+	font-weight: 600;
+	text-rendering: optimizeLegibility;
+	color: var(--color-text);
+	font-family: "Barlow", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	transition: color 0.5s, background-color 0.5s;
+}
+
+.ff-1 {
+	font-family: "Fraunces", serif;
+}
+
+.fw-1 {
+	font-weight: 700;
+}
+
+.fw-2 {
+	font-weight: 900;
+}
+
+button {
+	background: none;
+	outline: none;
+	border: none;
+}
