@@ -7,8 +7,9 @@ section.hero
 </template>
 
 <script>
-import mobileHeader from "../assets/images/mobile/image-header.jpg";
-import desktopHeader from "../assets/images/desktop/image-header.jpg";
+import mobileHeader from "@/assets/images/mobile/image-header.jpg";
+import desktopHeader from "@/assets/images/desktop/image-header.jpg";
+
 export default {
 	data() {
 		return {
@@ -17,7 +18,9 @@ export default {
 	},
 	computed: {
 		heroImg() {
-			return this.widthSize < 1440 ? mobileHeader : desktopHeader;
+			const isMobile = this.widthSize < 1440;
+
+			return isMobile ? mobileHeader : desktopHeader;
 		},
 	},
 };

@@ -1,17 +1,38 @@
 <template lang="pug">
-.item.gallery__item
-	img.item__img(src="@/assets/images/desktop/image-transform.jpg")
+.item.gallery__item(v-if="item")
 
-	.item__container
-		h2.item__title.ff-1.fw-2 Transform your brand
-		p.item__text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas officia enim ullam incidunt vero ducimus error maxime corrupti ea illum.
+	img.item__img(:src="imgSrc")
 
-		button.item__button
+	.item__container(:class="{'item__container--float' : item.float}")
+		h2.item__title.ff-1.fw-2 {{ item.title }}
+
+		p.item__text {{ item.text }}
+
+		button.item__button(v-if="item.button")
 			span.ff-1 LEARN MORE
+
 </template>
 
 <script>
-export default {};
+export default {
+	props: {
+		item: {
+			type: Object,
+		},
+	},
+	data() {
+		return {
+			widthSize: window.innerWidth,
+		};
+	},
+	computed: {
+		imgSrc() {
+			const isMobile = this.widthSize < 1440;
+
+			return this.item.url(isMobile);
+		},
+	},
+};
 </script>
 
 <style lang="scss" scoped>
